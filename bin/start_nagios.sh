@@ -1,7 +1,6 @@
 #!/bin/sh
 
 set -e
-echo '/tmp/core.%h.%e.%t' > /proc/sys/kernel/core_pattern
 
 lighttpd -f /etc/lighttpd/lighttpd.conf
 
