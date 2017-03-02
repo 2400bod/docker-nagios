@@ -38,6 +38,7 @@ RUN	addgroup -g ${HOST_GROUP_ID} ${NAGIOS_GROUP}								&&	\
 	sed -ri s,/nagios/cgi-bin,/cgi-bin,				/usr/share/nagios/htdocs/config.inc.php	&&	\
 	mkdir -p /run/lighttpd											&&	\
 	chown lighttpd:lighttpd /run/lighttpd									&&	\
+	addgroup lighttpd nagios										&&	\
 	cp -R /etc/nagios /etc/nagios.orig									&&	\
 	cp -R /var/nagios /var/nagios.orig									&&	\
 	chmod u+s /bin/ping											&&	\
