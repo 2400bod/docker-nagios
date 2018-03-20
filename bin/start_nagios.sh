@@ -2,6 +2,7 @@
 
 set -e
 
+[ -f /usr/bin/php-cgi ] || ln -s /usr/bin/php-cgi5 /usr/bin/php-cgi
 lighttpd -f /etc/lighttpd/lighttpd.conf
 
 [ -f /etc/nagios/nagios.cfg ] || cp -R /etc/nagios.orig/* /etc/nagios
